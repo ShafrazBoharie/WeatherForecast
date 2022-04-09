@@ -1,0 +1,7 @@
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.csproj.AssemblyReference.cache
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.AssemblyInfoInputs.cache
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.AssemblyInfo.cs
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.csproj.CoreCompileInputs.cache
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Api\obj\Debug\net6.0\WeatherForecast.Api.MvcApplicationPartsAssemblyInfo.cache
