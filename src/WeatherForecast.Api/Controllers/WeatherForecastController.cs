@@ -35,14 +35,14 @@ namespace WeatherForecast.Api.Controllers
             return NotFound();
         }
 
-        [HttpGet("Forecast/{key}")]
+        [HttpGet("Headline/{key}")]
         public async Task<IActionResult> Get(int key)
         {
             if (key==0) return NotFound();
 
-            var locations = await _weatherService.GetForecast(key);
+            var forecast = await _weatherService.GetForecast(key);
 
-            if (locations.Any())
+            if (forecast!=null)
             {
                 //TODO Get Locations
                 //  var locationsDtos = 

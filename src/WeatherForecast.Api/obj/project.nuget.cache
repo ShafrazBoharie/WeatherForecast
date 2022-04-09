@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "iDlzsyXogYABMK5eOKcOxM6KdhfBqJIxdrV8TfEJGT1sBAay36dq6e2R+NdPBKha9f/HpZF3y9ai1F6h64FuRg==",
+  "dgSpecHash": "qMK3Q21rKOYycxDjQpMdTW8Zm3DNBZsghDKYZRbaxWLlUqzzkIWJFDtmfXRaueVk4ZL4UmfiUOa3hLqk6DJTAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\src\\WeatherForecast.Api\\WeatherForecast.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shafr\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\shafr\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
