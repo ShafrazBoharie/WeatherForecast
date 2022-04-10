@@ -22,6 +22,17 @@ namespace WeatherForecast.App.Controllers
             return View();
         }
 
+        public async Task<IActionResult> GetLocations(string keyword)
+        {
+            if (keyword.Trim().Length <= 2) return View();
+
+            var location = new List<LocationModel>();
+            location.Add(new LocationModel{Key = 123,Location = "London",Code = "Lo".ToUpper()});
+            location.Add(new LocationModel { Key = 124, Location = "Bristol", Code = "Br".ToUpper() });
+            location.Add(new LocationModel { Key = 125, Location = "Cardiff", Code = "Cr".ToUpper() });
+            return Json(location);
+        }
+
         public IActionResult Privacy()
         {
             return View();

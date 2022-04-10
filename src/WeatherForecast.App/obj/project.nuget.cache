@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KD5o6EmnHkeqZY0aWhsclwS7v4HSvLsNwPeHaieg7DXNLDyESqMNjfPSayRE52eIPKp3sBGptuUO6ZM7Fjj9+w==",
+  "dgSpecHash": "zZeLRQdxHmLjGbkLoaPBJ/RmzxCjftaraCsHHxU4+o2ZyIKGNq4S0vX5a8Mu2NBd15xRKlmq/8/lFXb8DXfsbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\src\\WeatherForecast.App\\WeatherForecast.App.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,8 @@
     "C:\\Users\\shafr\\.nuget\\packages\\azure.security.keyvault.certificates\\4.1.0\\azure.security.keyvault.certificates.4.1.0.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\azure.security.keyvault.secrets\\4.2.0\\azure.security.keyvault.secrets.4.2.0.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\shafr\\.nuget\\packages\\jquery\\3.6.0\\jquery.3.6.0.nupkg.sha512",
+    "C:\\Users\\shafr\\.nuget\\packages\\jquery.ui.combined\\1.13.1\\jquery.ui.combined.1.13.1.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",

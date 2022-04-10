@@ -3,6 +3,43 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Weather Forecast</h1>
+    <div class="ui-widget">
+        <label for="location">location: </label>
+        <input id="location">
+    </div>
 </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.27/jquery.autocomplete.min.js"></script>
+<script type="text/javascript">
+ 
+    var matchingLocations = [];
+
+
+    $( function() {
+        $("#location").autocomplete({
+            source: $.map(matchingLocations,function(d){return d.DisplayName})
+        });
+    } );
+
+
+    $("#location").keyup(function() {
+        var keyword = $('#location').val();
+        if (keyword.length <= 2) {
+            matchingLocations = [];
+        } else if (keyword.trim().indexOf(", ")===-1) {
+            $.get("/home/getLocations",
+                "keyword="+keyword,
+                function(data) {
+                    matchingLocations = data;
+                });
+        } else {
+            matchingLocations = [];
+        }
+    });
+
+
+</script>
+

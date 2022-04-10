@@ -28,6 +28,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    <ul>
+                        <span class="text-dark">@User.Identity.Name</span>
+                        <a asp-controller="Account" asp-action="Signout" asp-area="MicrosoftIdentity">Logout</a>
+                    </ul>
                 </div>
             </div>
         </nav>
