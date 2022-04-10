@@ -335,14 +335,11 @@ public class WeatherServicesTests
         });
         return moqOptions;
     }
-
-
+    
     private List<Location> LocationResponseContent()
     {
         return AutoFaker.Generate<List<Location>>();
     }
-
-
     private Forecast ForecastResponseContent()
     {
         return AutoFaker.Generate<Forecast>();

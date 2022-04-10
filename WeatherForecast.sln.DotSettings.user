@@ -6,5 +6,6 @@
     &lt;TestId&gt;xUnit::DA8AE956-3A4E-4919-A517-0D3012F53B3B::net6.0::WeatherForecast.Api.Tests.Services.WeatherServicesTests.WhenThereIsAnExceptionItShouldReturnException&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::DA8AE956-3A4E-4919-A517-0D3012F53B3B::net6.0::WeatherForecast.Api.Tests.Services.WeatherServicesTests.WhenKeywordDoesNotMatchWithAnyLocationsGetForecastShouldReturnEmptyForecast&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::DA8AE956-3A4E-4919-A517-0D3012F53B3B::net6.0::WeatherForecast.Api.Tests.Services.WeatherServicesTests.WhenThereIsAnExceptionGetForecastShouldTryHttpRequestTries&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::DA8AE956-3A4E-4919-A517-0D3012F53B3B::net6.0::WeatherForecast.Api.Tests.Mapper.LocationMapperTests.WhenLocationIsNulltShouldReturnEmpyLocationDtoCollection&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
