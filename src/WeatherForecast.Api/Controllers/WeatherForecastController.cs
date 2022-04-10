@@ -1,6 +1,4 @@
-using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
-using WeatherForecast.Api.Models.Entities;
 using WeatherForecast.Api.Services;
 
 namespace WeatherForecast.Api.Controllers

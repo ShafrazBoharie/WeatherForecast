@@ -104,7 +104,7 @@ namespace WeatherForecast.Api.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error retrieving Locations");
+                _logger.LogError(ex, "Error retrieving Forecast");
             }
 
             return output;

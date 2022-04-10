@@ -13,13 +13,13 @@ using Xunit;
 
 namespace WeatherForecast.Api.IntegrationTests.Services
 {
-    public class WeatherServicesTests
+    public class WeatherServicesIntegrationTests
     {
         private readonly ILogger<WeatherService> _logger;
         private readonly IOptions<AccuWeather> _accuWeatherOptions;
         private readonly WeatherService _weatherService;
 
-        public WeatherServicesTests()
+        public WeatherServicesIntegrationTests()
         {
            
             _accuWeatherOptions = Options.Create(
