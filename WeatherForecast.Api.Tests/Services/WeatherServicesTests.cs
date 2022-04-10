@@ -41,7 +41,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.Value.AccuWeatherKey}&q={keyword.Trim()}")),
+                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.AccuWeatherKey}&q={keyword.Trim()}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -75,7 +75,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.Value.AccuWeatherKey}&q={keyword.Trim()}")),
+                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.AccuWeatherKey}&q={keyword.Trim()}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -106,7 +106,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.Value.AccuWeatherKey}&q={locationKey.Trim()}")),
+                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.AccuWeatherKey}&q={locationKey.Trim()}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -145,7 +145,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.Value.AccuWeatherKey}&q={keyword.Trim()}")),
+                        $"{_testUrl}/locations/v1/cities/autocomplete?apikey={moqOptions.AccuWeatherKey}&q={keyword.Trim()}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -189,7 +189,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.Value.AccuWeatherKey}")),
+                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.AccuWeatherKey}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -222,7 +222,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.Value.AccuWeatherKey}")),
+                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.AccuWeatherKey}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -253,7 +253,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.Value.AccuWeatherKey}")),
+                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.AccuWeatherKey}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -292,7 +292,7 @@ public class WeatherServicesTests
                     r.Method == HttpMethod.Get &&
                     r.RequestUri ==
                     new Uri(
-                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.Value.AccuWeatherKey}")),
+                        $"{_testUrl}/forecasts/v1/daily/1day/{locationKey}?apikey={moqOptions.AccuWeatherKey}")),
                 It.IsAny<CancellationToken>()))
             .ReturnsAsync(new HttpResponseMessage
             {
@@ -316,7 +316,7 @@ public class WeatherServicesTests
     private static IHttpClientFactory mockHttpClientFactory(Mock<HttpMessageHandler> handler, string testUrl)
     {
         var moqFactory = handler.CreateClientFactory();
-        Mock.Get(moqFactory).Setup(x => x.CreateClient("AccuWeather"))
+        Mock.Get(moqFactory).Setup(x => x.CreateClient("AccuWeatherSettings"))
             .Returns(() =>
             {
                 var client = handler.CreateClient();
@@ -326,13 +326,13 @@ public class WeatherServicesTests
         return moqFactory;
     }
 
-    private static IOptions<AccuWeather> MoqOptions(string testUrl)
+    private static AccuWeatherSettings MoqOptions(string testUrl)
     {
-        var moqOptions = Options.Create(new AccuWeather
+        var moqOptions =new AccuWeatherSettings
         {
             AccuWeatherKey = "12345678",
             AccuWeatherHost = testUrl
-        });
+        };
         return moqOptions;
     }
     

@@ -16,20 +16,19 @@ namespace WeatherForecast.Api.IntegrationTests.Services
     public class WeatherServicesIntegrationTests
     {
         private readonly ILogger<WeatherService> _logger;
-        private readonly IOptions<AccuWeather> _accuWeatherOptions;
+        private readonly AccuWeatherSettings _accuWeatherSettings;
         private readonly WeatherService _weatherService;
 
         public WeatherServicesIntegrationTests()
         {
            
-            _accuWeatherOptions = Options.Create(
-                new AccuWeather{
+            _accuWeatherSettings = new AccuWeatherSettings{
                 AccuWeatherHost = "https://dataservice.accuweather.com",
-                AccuWeatherKey = "4q6vNx9iszAYwnr4JcC0RXRLp1gnUA3J"
-                });
+                AccuWeatherKey = "UwpUxO06Y9tYvwpLtLHuLZW56Nr8lFZY"
+            };
 
             _logger = new Mock<ILogger<WeatherService>>().Object;
-            _weatherService = new WeatherService(new DefaultHttpClientFactory(), _accuWeatherOptions, _logger);
+            _weatherService = new WeatherService(new DefaultHttpClientFactory(), _accuWeatherSettings, _logger);
         }
 
         [Fact]
@@ -84,8 +83,7 @@ namespace WeatherForecast.Api.IntegrationTests.Services
     {
         private static readonly Lazy<HttpClient> _httpClientLazy =
             new Lazy<HttpClient>(() => new HttpClient());
-
-        // NOTE: This will always return the same HttpClient instance.
+                
         public HttpClient CreateClient(string name) => _httpClientLazy.Value;
     }
 }

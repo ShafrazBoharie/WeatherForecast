@@ -11415,6 +11415,7 @@
       "Microsoft.AspNetCore.Identity.UI >= 6.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.3",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.3",
+      "Microsoft.Extensions.Options >= 6.0.0",
       "Microsoft.Identity.Web >= 1.23.1",
       "Microsoft.Identity.Web.UI >= 1.23.1",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.2"
@@ -11494,6 +11495,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.3, )"
+          },
+          "Microsoft.Extensions.Options": {
+            "target": "Package",
+            "version": "[6.0.0, )"
           },
           "Microsoft.Identity.Web": {
             "target": "Package",

@@ -5,7 +5,7 @@ namespace WeatherForecast.Api.Mapper
 {
     public class ForecastMapper
     {
-        public ForecastDto Map(Forecast forecast)
+        public virtual ForecastDto Map(Forecast forecast)
         {
             if (forecast is null || forecast.DailyForecasts is null || forecast.Headline is null) return new ForecastDto();
             return  new ForecastDto()

@@ -5,7 +5,7 @@ namespace WeatherForecast.Api.Mapper
 {
     public class LocationMapper
     {
-        public IEnumerable<LocationDto> Map(List<Location> locations)
+        public virtual IEnumerable<LocationDto> Map(List<Location> locations)
         {
             if (locations == null) return new List<LocationDto>();
             return locations.Select(x => new LocationDto

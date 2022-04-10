@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2022-04-10T12:30:57.1321694Z"
+    },
+    "appInsights1": {
+      "restored": true,
+      "restoreTime": "2022-04-10T12:30:21.8442587Z"
+    }
+  },
+  "parameters": {
+    "secrets1.resourceGroupName": {
+      "Name": "secrets1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "Brady"
+    },
+    "secrets1.subscriptionId": {
+      "Name": "secrets1.subscriptionId",
+      "Type": "subscription",
+      "Value": "487dc1b7-9fb8-4c2e-86b4-1cc46eba643a"
+    }
+  }
+}

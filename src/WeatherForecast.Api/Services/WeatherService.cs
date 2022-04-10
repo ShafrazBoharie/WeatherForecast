@@ -8,18 +8,18 @@ using WeatherForecast.Api.Models.Entities;
 
 namespace WeatherForecast.Api.Services
 {
-    public class WeatherService
+    public class WeatherService : IWeatherService
     {
         private readonly ILogger<WeatherService> _logger;
         private readonly AsyncRetryPolicy<bool> _retryPolicy;
         private readonly HttpClient _httpClient;
-        private readonly AccuWeather accueWeatherSettings;
+        private readonly AccuWeatherSettings _accueWeatherSettingsSettings;
         private readonly int MaxRetries = 3;
-        public WeatherService(IHttpClientFactory httpClientFactory,IOptions<AccuWeather> accuWesatherOptions, ILogger<WeatherService> logger)
+        public WeatherService(IHttpClientFactory httpClientFactory,AccuWeatherSettings accuWesatherSettingsSettings, ILogger<WeatherService> logger)
         {
             _logger = logger;
-            _httpClient = httpClientFactory.CreateClient("AccuWeather");
-            accueWeatherSettings = accuWesatherOptions.Value;
+            _httpClient = httpClientFactory.CreateClient("AccuWeatherSettings");
+            _accueWeatherSettingsSettings = accuWesatherSettingsSettings;
             _retryPolicy = Policy<bool>.Handle<Exception>().RetryAsync(MaxRetries);
         }
 
@@ -32,7 +32,7 @@ namespace WeatherForecast.Api.Services
                 status = await _retryPolicy.ExecuteAsync(async () =>
                 {
                     var url =
-                        $"{accueWeatherSettings.AccuWeatherHost}/locations/v1/cities/autocomplete?apikey={accueWeatherSettings.AccuWeatherKey}&q={startString.Trim()}";
+                        $"{_accueWeatherSettingsSettings.AccuWeatherHost}/locations/v1/cities/autocomplete?apikey={_accueWeatherSettingsSettings.AccuWeatherKey}&q={startString.Trim()}";
                     var response = await _httpClient.GetAsync(url);
 
                     switch (response.StatusCode)
@@ -76,7 +76,7 @@ namespace WeatherForecast.Api.Services
                 status = await _retryPolicy.ExecuteAsync(async () =>
                 {
                     var url =
-                        $"{accueWeatherSettings.AccuWeatherHost}/forecasts/v1/daily/1day/{key}?apikey={accueWeatherSettings.AccuWeatherKey}";
+                        $"{_accueWeatherSettingsSettings.AccuWeatherHost}/forecasts/v1/daily/1day/{key}?apikey={_accueWeatherSettingsSettings.AccuWeatherKey}";
                     var response = await _httpClient.GetAsync(url);
 
                     switch (response.StatusCode)

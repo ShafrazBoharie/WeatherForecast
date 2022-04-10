@@ -1,50 +1,53 @@
 using Microsoft.AspNetCore.Mvc;
+using WeatherForecast.Api.Mapper;
 using WeatherForecast.Api.Services;
 
 namespace WeatherForecast.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("/api/[controller]")]
     public class WeatherController : ControllerBase
     {
         private readonly ILogger<WeatherController> _logger;
-        private readonly WeatherService _weatherService;
+        private readonly IWeatherService _weatherService;
+        private readonly ForecastMapper _forecastMapper;
+        private readonly LocationMapper _locationMapper;
 
-        public WeatherController(ILogger<WeatherController> logger, WeatherService weatherService)
+        public WeatherController(ILogger<WeatherController> logger, IWeatherService weatherService, ForecastMapper forecastMapper, LocationMapper locationMapper)
         {
             _logger = logger;
             _weatherService = weatherService;
+            _forecastMapper = forecastMapper;
+            _locationMapper = locationMapper;
         }
 
-        [HttpGet("Locations/{startString}")]
-        public async Task<IActionResult> Get(string startString)
+        [HttpGet("Locations/{keyword}")]
+        public async Task<IActionResult> GetLocations(string keyword)
         {
-            if (string.IsNullOrEmpty(startString)) return NotFound();
+            if (string.IsNullOrEmpty(keyword)) return NotFound();
 
-            var locations = await _weatherService.GetMatchingLocations(startString);
+            var locations = await _weatherService.GetMatchingLocations(keyword);
 
             if (locations.Any())
             {
-                //TODO Get Locations
-              //  var locationsDtos = 
-                    return Ok();
+                var locationsDtos = _locationMapper.Map(locations);
+                    return Ok(locationsDtos);
             }
 
             return NotFound();
         }
 
-        [HttpGet("Headline/{key}")]
-        public async Task<IActionResult> Get(int key)
+        [HttpGet("Forecast/{key}")]
+        public async Task<IActionResult> GetForecast(int key)
         {
-            if (key==0) return NotFound();
+            if (key<=0) return NotFound();
 
             var forecast = await _weatherService.GetForecast(key);
 
-            if (forecast!=null)
+            if (forecast != null)
             {
-                //TODO Get Locations
-                //  var locationsDtos = 
-                return Ok();
+                var forecastDto = _forecastMapper.Map(forecast);
+                return Ok(forecastDto);
             }
 
             return NotFound();
