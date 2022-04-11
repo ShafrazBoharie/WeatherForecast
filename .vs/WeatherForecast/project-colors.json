@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "674fab8c-f75d-47bc-8e31-072f1615841c": {
+      "ProjectGuid": "674fab8c-f75d-47bc-8e31-072f1615841c",
+      "DisplayName": "WeatherForecast.Api.IntegrationTests",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "4a14dda7-b4e6-4911-8d6e-f5e61f632a80": {
+      "ProjectGuid": "4a14dda7-b4e6-4911-8d6e-f5e61f632a80",
+      "DisplayName": "WeatherForecast.Models",
+      "ColorIndex": 1
+    },
+    "f2316daf-4460-453b-a931-2cb87af8c17a": {
+      "ProjectGuid": "f2316daf-4460-453b-a931-2cb87af8c17a",
+      "DisplayName": "WeatherForecast.Api",
+      "ColorIndex": 2
+    },
+    "77a19e9a-a566-4d45-957c-037ca2f36dd6": {
+      "ProjectGuid": "77a19e9a-a566-4d45-957c-037ca2f36dd6",
+      "DisplayName": "WeatherForecast.App",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
