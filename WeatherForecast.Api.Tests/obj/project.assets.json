@@ -2799,7 +2799,8 @@
           "Microsoft.ApplicationInsights.AspNetCore": "2.20.0",
           "Microsoft.Extensions.Options": "6.0.0",
           "Polly": "7.2.3",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "WeatherForecast.Models": "1.0.0"
         },
         "compile": {
           "bin/placeholder/WeatherForecast.Api.dll": {}
@@ -2810,6 +2811,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "WeatherForecast.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/WeatherForecast.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WeatherForecast.Models.dll": {}
+        }
       }
     }
   },
@@ -8961,6 +8972,11 @@
       "type": "project",
       "path": "../src/WeatherForecast.Api/WeatherForecast.Api.csproj",
       "msbuildProject": "../src/WeatherForecast.Api/WeatherForecast.Api.csproj"
+    },
+    "WeatherForecast.Models/1.0.0": {
+      "type": "project",
+      "path": "../src/WeatherForecast.Models/WeatherForecast.Models.csproj",
+      "msbuildProject": "../src/WeatherForecast.Models/WeatherForecast.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {

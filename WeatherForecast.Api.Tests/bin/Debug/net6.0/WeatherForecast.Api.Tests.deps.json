@@ -1793,10 +1793,16 @@
           "Microsoft.ApplicationInsights.AspNetCore": "2.20.0",
           "Microsoft.Extensions.Options": "6.0.0",
           "Polly": "7.2.3",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "WeatherForecast.Models": "1.0.0"
         },
         "runtime": {
           "WeatherForecast.Api.dll": {}
+        }
+      },
+      "WeatherForecast.Models/1.0.0": {
+        "runtime": {
+          "WeatherForecast.Models.dll": {}
         }
       }
     }
@@ -3026,6 +3032,11 @@
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
     "WeatherForecast.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WeatherForecast.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1212,6 +1212,16 @@
             "rid": "win"
           }
         }
+      },
+      "WeatherForecast.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/WeatherForecast.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/WeatherForecast.Models.dll": {}
+        }
       }
     }
   },
@@ -3900,6 +3910,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "WeatherForecast.Models/1.0.0": {
+      "type": "project",
+      "path": "../WeatherForecast.Models/WeatherForecast.Models.csproj",
+      "msbuildProject": "../WeatherForecast.Models/WeatherForecast.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3909,7 +3924,8 @@
       "Microsoft.ApplicationInsights.AspNetCore >= 2.20.0",
       "Microsoft.Extensions.Options >= 6.0.0",
       "Polly >= 7.2.3",
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "Swashbuckle.AspNetCore >= 6.2.3",
+      "WeatherForecast.Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -3944,7 +3960,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\src\\WeatherForecast.Models\\WeatherForecast.Models.csproj": {
+              "projectPath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\src\\WeatherForecast.Models\\WeatherForecast.Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

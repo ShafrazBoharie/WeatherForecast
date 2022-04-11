@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aQ0XKTeI4KpQAa0UVc9yF8VWcbqB4W6uIuV8sYQwDK/ov5vn0XCLtP3Etwd92HUf99lTydDb52g+ePeXL1VCVA==",
+  "dgSpecHash": "AmMWPSRQAs3y3IOgdcsUn+FDfi57iQW4uDW0UjJ1dakvbWQuVigS3J7tKfSfi3NVolgWyCxZyXsH3zonfA0P6g==",
   "success": true,
   "projectFilePath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.IntegrationTests\\WeatherForecast.Api.IntegrationTests.csproj",
   "expectedPackageFiles": [

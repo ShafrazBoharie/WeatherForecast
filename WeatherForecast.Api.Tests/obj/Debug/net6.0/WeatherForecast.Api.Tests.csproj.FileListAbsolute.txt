@@ -146,3 +146,5 @@ C:\Users\shafr\source\repos\WeatherForecast\WeatherForecast.Api.Tests\bin\Debug\
 C:\Users\shafr\source\repos\WeatherForecast\WeatherForecast.Api.Tests\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\shafr\source\repos\WeatherForecast\WeatherForecast.Api.Tests\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\shafr\source\repos\WeatherForecast\WeatherForecast.Api.Tests\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\shafr\source\repos\WeatherForecast\WeatherForecast.Api.Tests\bin\Debug\net6.0\WeatherForecast.Models.dll
+C:\Users\shafr\source\repos\WeatherForecast\WeatherForecast.Api.Tests\bin\Debug\net6.0\WeatherForecast.Models.pdb

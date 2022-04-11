@@ -5,5 +5,13 @@
         public string Name { get; set; }
         public string Code { get; set; }
         public string Key { get; set; }
+
+        public string DisplayName
+        {
+            get
+            {
+                return $"{Name}, {Code.ToUpper()}";
+            }
+        }
     }
 }

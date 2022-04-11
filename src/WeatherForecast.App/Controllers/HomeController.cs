@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using WeatherForecast.Api.Models.Dto;
 using WeatherForecast.App.Models;
+using Controller = Microsoft.AspNetCore.Mvc.Controller;
+using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
+
 
 namespace WeatherForecast.App.Controllers
 {
@@ -22,15 +26,39 @@ namespace WeatherForecast.App.Controllers
             return View();
         }
 
-        public async Task<IActionResult> GetLocations(string keyword)
-        {
-            if (keyword.Trim().Length <= 2) return View();
+        public IActionResult MatchingLocations(string keyword)
+        { if (string.IsNullOrEmpty(keyword) || keyword.Trim().Length <= 2) return Json("");
+            var locations = GetLocations(keyword);
+            return Json(locations);
+        }
 
-            var location = new List<LocationModel>();
-            location.Add(new LocationModel{Key = 123,Location = "London",Code = "Lo".ToUpper()});
-            location.Add(new LocationModel { Key = 124, Location = "Bristol", Code = "Br".ToUpper() });
-            location.Add(new LocationModel { Key = 125, Location = "Cardiff", Code = "Cr".ToUpper() });
-            return Json(location);
+
+        public IActionResult GetForecast(string locationId)
+        {
+            if (string.IsNullOrEmpty(locationId)) return Json("");
+            var forecast = GetForecastData(locationId);
+            return Json(forecast);
+        }
+
+        private List<LocationDto> GetLocations(string keyword)
+        {
+            var location = new List<LocationDto>();
+            location.Add(new LocationDto { Key = "123",Name = "London",Code = "Lo"});
+            location.Add(new LocationDto { Key = "124", Name = "Bristol", Code = "Br" });
+            location.Add(new LocationDto { Key = "125", Name = "Cardiff", Code = "Cr" });
+
+            return location;
+        }
+
+        private ForecastDto GetForecastData(string locationId)
+        {
+            var forecast = new ForecastDto();
+            forecast.Category = "Sunny";
+            forecast.Description = "Today is sunny weather";
+            forecast.MaxTemperature = 46;
+            forecast.MinTemperature = 28;
+            
+            return forecast;
         }
 
         public IActionResult Privacy()

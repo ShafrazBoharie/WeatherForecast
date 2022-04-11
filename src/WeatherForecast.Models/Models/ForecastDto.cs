@@ -1,5 +1,4 @@
-﻿using WeatherForecast.Api.Models.Entities;
-
+﻿
 namespace WeatherForecast.Api.Models.Dto
 {
     public class ForecastDto

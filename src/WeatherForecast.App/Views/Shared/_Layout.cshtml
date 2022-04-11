@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WeatherForecast.App.styles.css" asp-append-version="true" />
     @Html.Raw(JavaScriptSnippet.FullScript)
+    
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
 </head>
 <body>
     <header>
@@ -37,8 +42,6 @@
         </nav>
     </header>
 <div class="container">
-    <h2>@User.Identity.Name</h2>
-    <a asp-controller="Account" asp-action="Signout" asp-area="MicrosoftIdentity">Logout</a>
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
@@ -49,9 +52,7 @@
             &copy; 2022 - WeatherForecast.App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

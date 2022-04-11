@@ -2,44 +2,87 @@
     ViewData["Title"] = "Home Page";
 }
 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+
+
 <div class="text-center">
     <h1 class="display-4">Weather Forecast</h1>
+    <br/>
     <div class="ui-widget">
-        <label for="location">location: </label>
+        <label for="location">Location: </label>
         <input id="location">
+        <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+    </div>
+    <br/>
+    <div id="forecast">
+        <div><h3 id="fLocation"></h3></></div>
+        <h4 id="fCategory"></h4>
+        <h5  id="fDescription"></h5>
+        <h6>Max Temp: <span id="fMaxTemp"></span> F</h6>
+        <h6>Min Temp: <span id="fMinTemp"></span>F</h6>
+
     </div>
 </div>
 
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.2.27/jquery.autocomplete.min.js"></script>
 <script type="text/javascript">
- 
-    var matchingLocations = [];
+    var selectedLocationId = "";
+    $(document).ready(function() {
+         $("#forecast").hide();
 
-
-    $( function() {
         $("#location").autocomplete({
-            source: $.map(matchingLocations,function(d){return d.DisplayName})
-        });
-    } );
-
-
-    $("#location").keyup(function() {
-        var keyword = $('#location').val();
-        if (keyword.length <= 2) {
-            matchingLocations = [];
-        } else if (keyword.trim().indexOf(", ")===-1) {
-            $.get("/home/getLocations",
-                "keyword="+keyword,
-                function(data) {
-                    matchingLocations = data;
+            source: function(request, response) {
+                $.ajax({
+                    url: "/home/MatchingLocations",
+                    data: { keyword: request.term },
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        var transformed = $.map(data,
+                            function(el) {
+                                return {
+                                    label: el.displayName,
+                                    id: el.key
+                                };
+                            });
+                        response(transformed);
+                    },
+                    error: function(d) {
+                        response([]);
+                    }
                 });
-        } else {
-            matchingLocations = [];
-        }
+            },
+            minLength: 3,
+            select: function (event, ui) {
+                selectedLocationId = ui.item.id;
+                
+            }
+        });
+        
+        $("#btnSubmit").click(function() {
+            var selectedLocation = $("#location").val();
+            if (selectedLocation.trim().indexOf(", ") != -1) {
+
+                $.ajax({
+                    url: '@Url.Action("GetForecast", "Home")',
+                    data: {locationId:selectedLocationId},
+                    type: "GET",
+                    success: function (result) {
+                        if (result!="") {
+                            $("#fLocation").text(selectedLocation);
+                            $("#fCategory").text(result.category);
+                            $("#fDescription").text(result.description);
+                            $("#fMaxTemp").text(result.maxTemperature);
+                            $("#fMinTemp").text(result.minTemperature);
+
+                            $("#forecast").show();
+                        }
+                    }
+                });
+            }
+        });
     });
-
-
+      
 </script>
 
