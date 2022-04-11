@@ -1,15 +1,19 @@
 using Azure.Identity;
-using Microsoft.Extensions.Options;
+using Microsoft.Identity.Web;
 using WeatherForecast.Api.Mapper;
 using WeatherForecast.Api.Models;
 using WeatherForecast.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Configuration.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
 builder.Services.AddControllers();
+
+builder.Services.AddCors(options => options.AddPolicy("allowAny", o => o.AllowAnyOrigin()));
+
+builder.Services.AddMicrosoftIdentityWebApiAuthentication(builder.Configuration, "AzureAD");
+builder.Services.AddAuthorization();
 
 builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
@@ -49,7 +53,6 @@ builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -57,7 +60,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

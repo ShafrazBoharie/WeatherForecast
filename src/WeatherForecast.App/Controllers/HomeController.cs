@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using WeatherForecast.Api.Models.Dto;
 using WeatherForecast.App.Models;
+using WeatherForecast.App.Services;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
 using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
 
@@ -11,10 +13,12 @@ namespace WeatherForecast.App.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IWeatherForecastService _weatherForecastService;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IWeatherForecastService weatherForecastService)
         {
             _logger = logger;
+            _weatherForecastService = weatherForecastService;
             _logger.LogInformation("Hello Logger-Trace");
             _logger.LogInformation("Hello Logger-Information");
             _logger.LogError("Hello Logger-Exception");
@@ -26,39 +30,21 @@ namespace WeatherForecast.App.Controllers
             return View();
         }
 
-        public IActionResult MatchingLocations(string keyword)
-        { if (string.IsNullOrEmpty(keyword) || keyword.Trim().Length <= 2) return Json("");
-            var locations = GetLocations(keyword);
+        public async Task<IActionResult> MatchingLocations(string keyword)
+        {
+            if (string.IsNullOrEmpty(keyword) || keyword.Trim().Length <= 2)
+            {
+                return Json("");
+            }
+            var locations = await _weatherForecastService.GetMatchingLocations(keyword);
             return Json(locations);
         }
 
-
-        public IActionResult GetForecast(string locationId)
+        public async Task<IActionResult> GetForecast(string locationId)
         {
             if (string.IsNullOrEmpty(locationId)) return Json("");
-            var forecast = GetForecastData(locationId);
+            var forecast = await _weatherForecastService.GetForecast(locationId);
             return Json(forecast);
-        }
-
-        private List<LocationDto> GetLocations(string keyword)
-        {
-            var location = new List<LocationDto>();
-            location.Add(new LocationDto { Key = "123",Name = "London",Code = "Lo"});
-            location.Add(new LocationDto { Key = "124", Name = "Bristol", Code = "Br" });
-            location.Add(new LocationDto { Key = "125", Name = "Cardiff", Code = "Cr" });
-
-            return location;
-        }
-
-        private ForecastDto GetForecastData(string locationId)
-        {
-            var forecast = new ForecastDto();
-            forecast.Category = "Sunny";
-            forecast.Description = "Today is sunny weather";
-            forecast.MaxTemperature = 46;
-            forecast.MinTemperature = 28;
-            
-            return forecast;
         }
 
         public IActionResult Privacy()

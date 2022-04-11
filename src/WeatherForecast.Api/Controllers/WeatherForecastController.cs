@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WeatherForecast.Api.Mapper;
 using WeatherForecast.Api.Services;
 
 namespace WeatherForecast.Api.Controllers
 {
+    
     [ApiController]
     [Route("/api/[controller]")]
     public class WeatherController : ControllerBase
@@ -21,6 +23,7 @@ namespace WeatherForecast.Api.Controllers
             _locationMapper = locationMapper;
         }
 
+        [Authorize]
         [HttpGet("Locations/{keyword}")]
         public async Task<IActionResult> GetLocations(string keyword)
         {
