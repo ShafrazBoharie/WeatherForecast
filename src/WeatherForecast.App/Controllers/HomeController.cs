@@ -1,35 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Authorization;
-using WeatherForecast.Api.Models.Dto;
 using WeatherForecast.App.Models;
 using WeatherForecast.App.Services;
 using Controller = Microsoft.AspNetCore.Mvc.Controller;
-using JsonResult = Microsoft.AspNetCore.Mvc.JsonResult;
-
 
 namespace WeatherForecast.App.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IWeatherForecastService _weatherForecastService;
+        private readonly ITokenAcquisition _tokenAcquisition;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IWeatherForecastService weatherForecastService)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IWeatherForecastService weatherForecastService, ITokenAcquisition tokenAcquisition)
         {
             _logger = logger;
             _weatherForecastService = weatherForecastService;
-            _logger.LogInformation("Hello Logger-Trace");
-            _logger.LogInformation("Hello Logger-Information");
-            _logger.LogError("Hello Logger-Exception");
-            var cc= configuration["WeatherAPI"];
+            _tokenAcquisition = tokenAcquisition;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
+        
         public async Task<IActionResult> MatchingLocations(string keyword)
         {
             if (string.IsNullOrEmpty(keyword) || keyword.Trim().Length <= 2)

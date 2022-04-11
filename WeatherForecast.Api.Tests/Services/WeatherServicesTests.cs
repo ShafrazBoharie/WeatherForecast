@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using AutoBogus;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Moq;
 using Moq.Contrib.HttpClient;
 using Moq.Protected;

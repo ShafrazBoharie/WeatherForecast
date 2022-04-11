@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using System.Net.Http.Headers;
 using System.Text.Json;
 using Microsoft.Identity.Web;
 using Polly;
@@ -29,14 +28,11 @@ namespace WeatherForecast.App.Services
             var status = false;
             var output = new List<LocationDto>();
 
-         //   string[] scopes = new string[] { "Api.Readonly" };
-          //  string accessToken = await _tokenAcquisition.GetAccessTokenForUserAsync(scopes);
-          //  _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
-
             try
             {
                 status = await _retryPolicy.ExecuteAsync(async () =>
                 {
+                    //TODO: Pass Bearer token 
                     var url = $"/api/Weather/Locations/{keyword}";
                     var response = await _httpClient.GetAsync(url);
 

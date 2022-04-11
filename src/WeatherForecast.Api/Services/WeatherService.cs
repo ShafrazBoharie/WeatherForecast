@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Options;
-using Polly;
+﻿using Polly;
 using Polly.Retry;
 using System.Net;
 using System.Text.Json;

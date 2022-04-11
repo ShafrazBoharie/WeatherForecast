@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using WeatherForecast.Api.Models;
-using Microsoft.Extensions.Options;
 using Moq;
 using WeatherForecast.Api.Models.Entities;
 using WeatherForecast.Api.Services;
