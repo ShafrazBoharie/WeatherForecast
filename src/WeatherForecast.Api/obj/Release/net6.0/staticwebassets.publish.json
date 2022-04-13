@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "caZPd5rfx6AwFNPV5XGqqDQT1zksB0S0HA7m/Vx907g=",
+  "Source": "WeatherForecast.Api",
+  "BasePath": "_content/WeatherForecast.Api",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

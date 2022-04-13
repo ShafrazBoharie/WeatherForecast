@@ -12,14 +12,12 @@ namespace WeatherForecast.App.Services
         private readonly HttpClient _httpClient;
         private readonly AsyncRetryPolicy<bool> _retryPolicy;
         private readonly ILogger<WeatherForecastService> _logger;
-        private readonly ITokenAcquisition _tokenAcquisition;
         private readonly int MaxRetries = 3;
 
 
-        public WeatherForecastService(IHttpClientFactory httpClientFactory, ILogger<WeatherForecastService> logger, ITokenAcquisition tokenAcquisition)
+        public WeatherForecastService(IHttpClientFactory httpClientFactory, ILogger<WeatherForecastService> logger)
         {
             _logger = logger;
-            _tokenAcquisition = tokenAcquisition;
             _httpClient = httpClientFactory.CreateClient("api");
             _retryPolicy = Policy<bool>.Handle<Exception>().RetryAsync(MaxRetries);
         }

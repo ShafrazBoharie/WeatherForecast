@@ -1,0 +1,12 @@
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\bin\Release\net6.0\WeatherForecast.Models.deps.json
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\bin\Release\net6.0\WeatherForecast.Models.dll
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\bin\Release\net6.0\WeatherForecast.Models.pdb
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.csproj.AssemblyReference.cache
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.AssemblyInfoInputs.cache
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.AssemblyInfo.cs
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.csproj.CoreCompileInputs.cache
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.dll
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\refint\WeatherForecast.Models.dll
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\WeatherForecast.Models.pdb
+C:\Users\shafr\source\repos\WeatherForecast\src\WeatherForecast.Models\obj\Release\net6.0\ref\WeatherForecast.Models.dll

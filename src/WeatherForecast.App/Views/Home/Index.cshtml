@@ -5,15 +5,19 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <script type="text/javascript" src="//code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js"></script>
 
 
 <div class="text-center">
     <h1 class="display-4">Weather Forecast</h1>
     <br/>
     <div class="ui-widget">
-        <label for="location">Location: </label>
         <input id="location">
         <button type="button" id="btnSubmit" class="btn btn-primary">Submit</button>
+    </div>
+    <div>
+        <span id="spinner" class="spinner-border text-dark" style="margin-left:-90px"></span>
     </div>
     <br/>
     <div id="forecast">
@@ -24,12 +28,14 @@
         <h6>Min Temp: <span id="fMinTemp"></span> F</h6>
 
     </div>
+
 </div>
 
 <script type="text/javascript">
     var selectedLocationId = "";
     $(document).ready(function() {
          $("#forecast").hide();
+         $("#spinner").hide();
 
         $("#location").autocomplete({
             source: function(request, response) {
@@ -47,6 +53,7 @@
                                 };
                             });
                         response(transformed);
+                        
                     },
                     error: function(d) {
                         response([]);
@@ -54,13 +61,25 @@
                 });
             },
             minLength: 3,
+            autoFocus:true,
             select: function (event, ui) {
                 selectedLocationId = ui.item.id;
                 
+            },
+            search: function(event, ui) { 
+                $('#spinner').show();
+            },
+            response: function(event, ui) {
+                $('#spinner').hide();
             }
         });
-        
-        $("#btnSubmit").click(function() {
+
+         $("#location").keyup(function() {
+             if ($("#location").valueOf().length < 3)
+                 $('#spinner').hide();
+         });
+
+         $("#btnSubmit").click(function() {
             var selectedLocation = $("#location").val();
             if (selectedLocation.trim().indexOf(", ") != -1) {
 
@@ -69,13 +88,12 @@
                     data: {locationId:selectedLocationId},
                     type: "GET",
                     success: function (result) {
-                        if (result!="") {
+                        if (result!=null) {
                             $("#fLocation").text(selectedLocation);
                             $("#fCategory").text(result.category);
                             $("#fDescription").text(result.description);
                             $("#fMaxTemp").text(result.maxTemperature);
                             $("#fMinTemp").text(result.minTemperature);
-
                             $("#forecast").show();
                         }
                     }

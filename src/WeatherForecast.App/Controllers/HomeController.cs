@@ -15,11 +15,10 @@ namespace WeatherForecast.App.Controllers
         private readonly IWeatherForecastService _weatherForecastService;
         private readonly ITokenAcquisition _tokenAcquisition;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IWeatherForecastService weatherForecastService, ITokenAcquisition tokenAcquisition)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, IWeatherForecastService weatherForecastService)
         {
             _logger = logger;
             _weatherForecastService = weatherForecastService;
-            _tokenAcquisition = tokenAcquisition;
         }
 
         public IActionResult Index()
