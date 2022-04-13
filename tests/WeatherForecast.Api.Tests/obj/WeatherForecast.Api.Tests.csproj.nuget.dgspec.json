@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj": {}
+    "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj": {}
   },
   "projects": {
     "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\src\\WeatherForecast.Api\\WeatherForecast.Api.csproj": {
@@ -159,14 +159,14 @@
         }
       }
     },
-    "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj": {
+    "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj",
         "projectName": "WeatherForecast.Api.Tests",
-        "projectPath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj",
+        "projectPath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj",
         "packagesPath": "C:\\Users\\shafr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\WeatherForecast.Api.Tests\\obj\\",
+        "outputPath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

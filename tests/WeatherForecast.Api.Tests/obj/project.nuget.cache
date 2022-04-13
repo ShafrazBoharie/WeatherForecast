@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "e8UlU2bHIC/BqnWRrE+o8kRZ9Lp8KZehB19+o1/AOwLQhcyZO3YZVC0JQHVn3kdg/0Twh6RfE9bGlFdEbtj4Cw==",
+  "dgSpecHash": "Pg2HeoieQBac7t4+V6SG2m9g07vCm0dr7TGdxlR3VYzd3PpbCmxvbIPeUHZeZzuSQHbCQ9ve9809L25YBDzf9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj",
+  "projectFilePath": "C:\\Users\\shafr\\source\\repos\\WeatherForecast\\tests\\WeatherForecast.Api.Tests\\WeatherForecast.Api.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\shafr\\.nuget\\packages\\autobogus\\2.13.1\\autobogus.2.13.1.nupkg.sha512",
     "C:\\Users\\shafr\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
